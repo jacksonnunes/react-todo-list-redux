@@ -1,57 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Typography, Container, Grid } from '@mui/material';
+import { ToDoColumn } from './components/columns/ToDo';
+import { InProgressColumn } from './components/columns/InProgress';
+import { DoneColumn } from './components/columns/Done';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Container>
+      <Typography textAlign='center' variant='h3' mt={3} mb={5}>
+        This is a ToDo APP with Redux
+      </Typography>
+      <Grid container spacing={3} justifyContent='center'>
+        <Grid item md={4}>
+          <ToDoColumn />
+        </Grid>
+        <Grid item md={4}>
+          <InProgressColumn />
+        </Grid>
+        <Grid item md={4}>
+          <DoneColumn />
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
