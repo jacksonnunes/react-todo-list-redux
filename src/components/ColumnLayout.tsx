@@ -140,12 +140,13 @@ const ColumnLayout: React.FC<IColumnLayoutProps> = ({
                     <ListItem
                       sx={{
                         transition: '.3s ease background-color',
+                        padding: '16px',
                         color: snapshot.isDragging ? '#fff' : '#000',
-                        bgcolor: snapshot.isDragging ? '#000' : '#fff',
+                        bgcolor: snapshot.isDragging ? '#00F' : '#fff',
                         position: 'relative',
                         border: '1px solid #989898',
                         my: 1,
-                        borderRadius: '3px',
+                        borderRadius: '10px',
                         '& .MuiTypography-root': {
                           display: 'flex',
                           alignItems: 'center',
@@ -175,6 +176,7 @@ const ColumnLayout: React.FC<IColumnLayoutProps> = ({
                           <ArrowDownwardIcon
                             sx={{
                               color: snapshot.isDragging ? '#fff' : '#000',
+                              transition: 'all .3s ease',
                               transform: !isTextShowed ? 'rotate(180deg)' : '',
                             }}
                           />
